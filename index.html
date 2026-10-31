@@ -1,0 +1,1382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="copyright" content="© 2026 Basil Yap, CC BY 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<title>DFR Adoption Map</title>
+<meta name="description" content="How U.S. police and fire departments are adopting drone as first responder (DFR), and whose drones they fly. Agency-by-agency research with a source for every claim, built on FAA waiver records.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://basilbuildsai.github.io/dfr-program-map/">
+<meta property="og:site_name" content="DFR Adoption Map">
+<meta property="article:published_time" content="2026-10-05T00:00:00Z">
+<meta property="article:modified_time" content="2026-10-31T20:44:08Z">
+<meta property="article:author" content="Basil Yap">
+<meta property="og:image" content="https://basilbuildsai.github.io/dfr-program-map/og-v3.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1254">
+<meta property="og:image:alt" content="Drone as First Responder. A real-time crime center operator watching map and live camera feeds.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://basilbuildsai.github.io/dfr-program-map/og-v3.jpg">
+<link rel="canonical" href="https://basilbuildsai.github.io/dfr-program-map/">
+<meta property="og:title" content="DFR Adoption Map">
+<meta property="og:description" content="How U.S. police and fire departments are adopting drone as first responder (DFR), and whose drones they fly. Agency-by-agency research with a source for every claim, built on FAA waiver records.">
+<meta name="author" content="Basil Yap">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15.5' fill='%231D4ED8'/%3E%3Ctext x='16' y='22.6' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='19' fill='%23FFFFFF'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
+<style>
+/* Leaflet 1.9.4 (BSD-2-Clause), inlined so the page carries no external stylesheet */
+/* required styles */
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+.leaflet-container {
+	overflow: hidden;
+	}
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	        user-select: none;
+	  -webkit-user-drag: none;
+	}
+/* Prevents IE11 from highlighting tiles in blue */
+.leaflet-tile::selection {
+	background: transparent;
+}
+/* Safari renders non-retina tile on retina better with this, but Chrome is worse */
+.leaflet-safari .leaflet-tile {
+	image-rendering: -webkit-optimize-contrast;
+	}
+/* hack that prevents hw layers "stretching" when loading new tiles */
+.leaflet-safari .leaflet-tile-container {
+	width: 1600px;
+	height: 1600px;
+	-webkit-transform-origin: 0 0;
+	}
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+	display: block;
+	}
+/* .leaflet-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */
+/* .leaflet-container img: map is broken in FF if you have max-width: 100% on tiles */
+.leaflet-container .leaflet-overlay-pane svg {
+	max-width: none !important;
+	max-height: none !important;
+	}
+.leaflet-container .leaflet-marker-pane img,
+.leaflet-container .leaflet-shadow-pane img,
+.leaflet-container .leaflet-tile-pane img,
+.leaflet-container img.leaflet-image-layer,
+.leaflet-container .leaflet-tile {
+	max-width: none !important;
+	max-height: none !important;
+	width: auto;
+	padding: 0;
+	}
+
+.leaflet-container img.leaflet-tile {
+	/* See: https://bugs.chromium.org/p/chromium/issues/detail?id=600120 */
+	mix-blend-mode: plus-lighter;
+}
+
+.leaflet-container.leaflet-touch-zoom {
+	-ms-touch-action: pan-x pan-y;
+	touch-action: pan-x pan-y;
+	}
+.leaflet-container.leaflet-touch-drag {
+	-ms-touch-action: pinch-zoom;
+	/* Fallback for FF which doesn't support pinch-zoom */
+	touch-action: none;
+	touch-action: pinch-zoom;
+}
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.leaflet-container {
+	-webkit-tap-highlight-color: transparent;
+}
+.leaflet-container a {
+	-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+}
+.leaflet-tile {
+	filter: inherit;
+	visibility: hidden;
+	}
+.leaflet-tile-loaded {
+	visibility: inherit;
+	}
+.leaflet-zoom-box {
+	width: 0;
+	height: 0;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+	z-index: 800;
+	}
+/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */
+.leaflet-overlay-pane svg {
+	-moz-user-select: none;
+	}
+
+.leaflet-pane         { z-index: 400; }
+
+.leaflet-tile-pane    { z-index: 200; }
+.leaflet-overlay-pane { z-index: 400; }
+.leaflet-shadow-pane  { z-index: 500; }
+.leaflet-marker-pane  { z-index: 600; }
+.leaflet-tooltip-pane   { z-index: 650; }
+.leaflet-popup-pane   { z-index: 700; }
+
+.leaflet-map-pane canvas { z-index: 100; }
+.leaflet-map-pane svg    { z-index: 200; }
+
+.leaflet-vml-shape {
+	width: 1px;
+	height: 1px;
+	}
+.lvml {
+	behavior: url(#default#VML);
+	display: inline-block;
+	position: absolute;
+	}
+
+
+/* control positioning */
+
+.leaflet-control {
+	position: relative;
+	z-index: 800;
+	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+	pointer-events: auto;
+	}
+.leaflet-top,
+.leaflet-bottom {
+	position: absolute;
+	z-index: 1000;
+	pointer-events: none;
+	}
+.leaflet-top {
+	top: 0;
+	}
+.leaflet-right {
+	right: 0;
+	}
+.leaflet-bottom {
+	bottom: 0;
+	}
+.leaflet-left {
+	left: 0;
+	}
+.leaflet-control {
+	float: left;
+	clear: both;
+	}
+.leaflet-right .leaflet-control {
+	float: right;
+	}
+.leaflet-top .leaflet-control {
+	margin-top: 10px;
+	}
+.leaflet-bottom .leaflet-control {
+	margin-bottom: 10px;
+	}
+.leaflet-left .leaflet-control {
+	margin-left: 10px;
+	}
+.leaflet-right .leaflet-control {
+	margin-right: 10px;
+	}
+
+
+/* zoom and fade animations */
+
+.leaflet-fade-anim .leaflet-popup {
+	opacity: 0;
+	-webkit-transition: opacity 0.2s linear;
+	   -moz-transition: opacity 0.2s linear;
+	        transition: opacity 0.2s linear;
+	}
+.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+	opacity: 1;
+	}
+.leaflet-zoom-animated {
+	-webkit-transform-origin: 0 0;
+	    -ms-transform-origin: 0 0;
+	        transform-origin: 0 0;
+	}
+svg.leaflet-zoom-animated {
+	will-change: transform;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+	-webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);
+	   -moz-transition:    -moz-transform 0.25s cubic-bezier(0,0,0.25,1);
+	        transition:         transform 0.25s cubic-bezier(0,0,0.25,1);
+	}
+.leaflet-zoom-anim .leaflet-tile,
+.leaflet-pan-anim .leaflet-tile {
+	-webkit-transition: none;
+	   -moz-transition: none;
+	        transition: none;
+	}
+
+.leaflet-zoom-anim .leaflet-zoom-hide {
+	visibility: hidden;
+	}
+
+
+/* cursors */
+
+.leaflet-interactive {
+	cursor: pointer;
+	}
+.leaflet-grab {
+	cursor: -webkit-grab;
+	cursor:    -moz-grab;
+	cursor:         grab;
+	}
+.leaflet-crosshair,
+.leaflet-crosshair .leaflet-interactive {
+	cursor: crosshair;
+	}
+.leaflet-popup-pane,
+.leaflet-control {
+	cursor: auto;
+	}
+.leaflet-dragging .leaflet-grab,
+.leaflet-dragging .leaflet-grab .leaflet-interactive,
+.leaflet-dragging .leaflet-marker-draggable {
+	cursor: move;
+	cursor: -webkit-grabbing;
+	cursor:    -moz-grabbing;
+	cursor:         grabbing;
+	}
+
+/* marker & overlays interactivity */
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-image-layer,
+.leaflet-pane > svg path,
+.leaflet-tile-container {
+	pointer-events: none;
+	}
+
+.leaflet-marker-icon.leaflet-interactive,
+.leaflet-image-layer.leaflet-interactive,
+.leaflet-pane > svg path.leaflet-interactive,
+svg.leaflet-image-layer.leaflet-interactive path {
+	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+	pointer-events: auto;
+	}
+
+/* visual tweaks */
+
+.leaflet-container {
+	background: #ddd;
+	outline-offset: 1px;
+	}
+.leaflet-container a {
+	color: #0078A8;
+	}
+.leaflet-zoom-box {
+	border: 2px dotted #38f;
+	background: rgba(255,255,255,0.5);
+	}
+
+
+/* general typography */
+.leaflet-container {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	}
+
+
+/* general toolbar styles */
+
+.leaflet-bar {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+	border-radius: 4px;
+	}
+.leaflet-bar a {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	}
+.leaflet-bar a,
+.leaflet-control-layers-toggle {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	display: block;
+	}
+.leaflet-bar a:hover,
+.leaflet-bar a:focus {
+	background-color: #f4f4f4;
+	}
+.leaflet-bar a:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	}
+.leaflet-bar a:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom: none;
+	}
+.leaflet-bar a.leaflet-disabled {
+	cursor: default;
+	background-color: #f4f4f4;
+	color: #bbb;
+	}
+
+.leaflet-touch .leaflet-bar a {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	}
+.leaflet-touch .leaflet-bar a:first-child {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	}
+.leaflet-touch .leaflet-bar a:last-child {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	}
+
+/* zoom control */
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+	font: bold 18px 'Lucida Console', Monaco, monospace;
+	text-indent: 1px;
+	}
+
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {
+	font-size: 22px;
+	}
+
+
+/* layers control */
+
+.leaflet-control-layers {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	background: #fff;
+	border-radius: 5px;
+	}
+.leaflet-control-layers-toggle {
+	background-image: url(images/layers.png);
+	width: 36px;
+	height: 36px;
+	}
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(images/layers-2x.png);
+	background-size: 26px 26px;
+	}
+.leaflet-touch .leaflet-control-layers-toggle {
+	width: 44px;
+	height: 44px;
+	}
+.leaflet-control-layers .leaflet-control-layers-list,
+.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+	display: none;
+	}
+.leaflet-control-layers-expanded .leaflet-control-layers-list {
+	display: block;
+	position: relative;
+	}
+.leaflet-control-layers-expanded {
+	padding: 6px 10px 6px 6px;
+	color: #333;
+	background: #fff;
+	}
+.leaflet-control-layers-scrollbar {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-right: 5px;
+	}
+.leaflet-control-layers-selector {
+	margin-top: 2px;
+	position: relative;
+	top: 1px;
+	}
+.leaflet-control-layers label {
+	display: block;
+	font-size: 13px;
+	font-size: 1.08333em;
+	}
+.leaflet-control-layers-separator {
+	height: 0;
+	border-top: 1px solid #ddd;
+	margin: 5px -10px 5px -6px;
+	}
+
+/* Default icon URLs */
+.leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
+	background-image: url(images/marker-icon.png);
+	}
+
+
+/* attribution and scale controls */
+
+.leaflet-container .leaflet-control-attribution {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
+	margin: 0;
+	}
+.leaflet-control-attribution,
+.leaflet-control-scale-line {
+	padding: 0 5px;
+	color: #333;
+	line-height: 1.4;
+	}
+.leaflet-control-attribution a {
+	text-decoration: none;
+	}
+.leaflet-control-attribution a:hover,
+.leaflet-control-attribution a:focus {
+	text-decoration: underline;
+	}
+.leaflet-attribution-flag {
+	display: inline !important;
+	vertical-align: baseline !important;
+	width: 1em;
+	height: 0.6669em;
+	}
+.leaflet-left .leaflet-control-scale {
+	margin-left: 5px;
+	}
+.leaflet-bottom .leaflet-control-scale {
+	margin-bottom: 5px;
+	}
+.leaflet-control-scale-line {
+	border: 2px solid #777;
+	border-top: none;
+	line-height: 1.1;
+	padding: 2px 5px 1px;
+	white-space: nowrap;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.8);
+	text-shadow: 1px 1px #fff;
+	}
+.leaflet-control-scale-line:not(:first-child) {
+	border-top: 2px solid #777;
+	border-bottom: none;
+	margin-top: -2px;
+	}
+.leaflet-control-scale-line:not(:first-child):not(:last-child) {
+	border-bottom: 2px solid #777;
+	}
+
+.leaflet-touch .leaflet-control-attribution,
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+	box-shadow: none;
+	}
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+	border: 2px solid rgba(0,0,0,0.2);
+	background-clip: padding-box;
+	}
+
+
+/* popup */
+
+.leaflet-popup {
+	position: absolute;
+	text-align: center;
+	margin-bottom: 20px;
+	}
+.leaflet-popup-content-wrapper {
+	padding: 1px;
+	text-align: left;
+	border-radius: 12px;
+	}
+.leaflet-popup-content {
+	margin: 13px 24px 13px 20px;
+	line-height: 1.3;
+	font-size: 13px;
+	font-size: 1.08333em;
+	min-height: 1px;
+	}
+.leaflet-popup-content p {
+	margin: 17px 0;
+	margin: 1.3em 0;
+	}
+.leaflet-popup-tip-container {
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	margin-top: -1px;
+	margin-left: -20px;
+	overflow: hidden;
+	pointer-events: none;
+	}
+.leaflet-popup-tip {
+	width: 17px;
+	height: 17px;
+	padding: 1px;
+
+	margin: -10px auto 0;
+	pointer-events: auto;
+
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+	background: white;
+	color: #333;
+	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	}
+.leaflet-container a.leaflet-popup-close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	text-align: center;
+	width: 24px;
+	height: 24px;
+	font: 16px/24px Tahoma, Verdana, sans-serif;
+	color: #757575;
+	text-decoration: none;
+	background: transparent;
+	}
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
+	color: #585858;
+	}
+.leaflet-popup-scrolled {
+	overflow: auto;
+	}
+
+.leaflet-oldie .leaflet-popup-content-wrapper {
+	-ms-zoom: 1;
+	}
+.leaflet-oldie .leaflet-popup-tip {
+	width: 24px;
+	margin: 0 auto;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)";
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);
+	}
+
+.leaflet-oldie .leaflet-control-zoom,
+.leaflet-oldie .leaflet-control-layers,
+.leaflet-oldie .leaflet-popup-content-wrapper,
+.leaflet-oldie .leaflet-popup-tip {
+	border: 1px solid #999;
+	}
+
+
+/* div icon */
+
+.leaflet-div-icon {
+	background: #fff;
+	border: 1px solid #666;
+	}
+
+
+/* Tooltip */
+/* Base styles for the element that has a tooltip */
+.leaflet-tooltip {
+	position: absolute;
+	padding: 6px;
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	color: #222;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+	}
+.leaflet-tooltip.leaflet-interactive {
+	cursor: pointer;
+	pointer-events: auto;
+	}
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+	position: absolute;
+	pointer-events: none;
+	border: 6px solid transparent;
+	background: transparent;
+	content: "";
+	}
+
+/* Directions */
+
+.leaflet-tooltip-bottom {
+	margin-top: 6px;
+}
+.leaflet-tooltip-top {
+	margin-top: -6px;
+}
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-top:before {
+	left: 50%;
+	margin-left: -6px;
+	}
+.leaflet-tooltip-top:before {
+	bottom: 0;
+	margin-bottom: -12px;
+	border-top-color: #fff;
+	}
+.leaflet-tooltip-bottom:before {
+	top: 0;
+	margin-top: -12px;
+	margin-left: -6px;
+	border-bottom-color: #fff;
+	}
+.leaflet-tooltip-left {
+	margin-left: -6px;
+}
+.leaflet-tooltip-right {
+	margin-left: 6px;
+}
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+	top: 50%;
+	margin-top: -6px;
+	}
+.leaflet-tooltip-left:before {
+	right: 0;
+	margin-right: -12px;
+	border-left-color: #fff;
+	}
+.leaflet-tooltip-right:before {
+	left: 0;
+	margin-left: -12px;
+	border-right-color: #fff;
+	}
+
+/* Printing */
+
+@media print {
+	/* Prevent printers from removing background-images of controls. */
+	.leaflet-control {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		}
+	}
+
+</style>
+<style>
+/* Same type system as the AAM Fleet Registry (condensed Archivo), in a public-safety palette:
+   navy and red fields with white type; blue marks law enforcement and red marks fire and EMS on the map. */
+:root{
+  color-scheme:light;
+  /* Public-safety palette: navy field, blue = law enforcement, red = fire and EMS. White type on navy and red. */
+  --black:#0A0A0A; --white:#FFFFFF; --navy:#0B1F3A; --red:#B5121B; --blue:#1D4ED8;
+  --ink:var(--black); --paper:var(--white); --ink-2:#575757; --rule:var(--ink);
+  --land:#F0F0F0; --line-dim:rgba(10,10,10,.18);
+  --law:#1D4ED8; --fire:#C8102E; --other:#FFFFFF; --sel:#0A0A0A; --focus:#1D4ED8;
+  --pad:clamp(16px,3.2vw,48px); --cond:62%;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ink:#FFFFFF; --paper:#0A0A0A; --ink-2:#A3A3A3; --land:#1C1C1C; --line-dim:rgba(255,255,255,.18);
+  --law:#5B8CFF; --fire:#FF4D5E; --other:#0A0A0A; --sel:#FFFFFF; --focus:#5B8CFF; --navy:#0E2647;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#FFFFFF; --paper:#0A0A0A; --ink-2:#A3A3A3; --land:#1C1C1C; --line-dim:rgba(255,255,255,.18);
+  --law:#5B8CFF; --fire:#FF4D5E; --other:#0A0A0A; --sel:#FFFFFF; --focus:#5B8CFF; --navy:#0E2647;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,p,ol,ul{margin:0}
+ul{padding:0}
+a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:3px}
+button,input,select{font-family:inherit}
+.x{font-stretch:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;line-height:.84}
+.num{font-variant-numeric:tabular-nums}
+.meta{font-size:11px;line-height:1.3;font-weight:500;letter-spacing:.01em}
+.meta b{font-weight:700}
+.lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);line-height:1.3}
+.dim{color:var(--ink-2);font-size:13px}
+.panel{position:relative;padding:var(--pad);border-bottom:1.5px solid var(--rule);min-width:0}
+h2.x{font-size:clamp(40px,4.4vw,64px);text-wrap:balance}
+.kicker{font-size:14px;font-weight:500;margin-top:12px;color:var(--ink-2);max-width:68ch}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.hero :focus-visible,.kpis :focus-visible{outline-color:var(--white)}
+
+.chip,.toggle{font:600 13px/1.2 Archivo;padding:7px 11px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:0;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chip:hover,.toggle:hover{background:var(--land)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.seg{display:inline-flex;flex-wrap:wrap}
+.seg .chip+.chip{margin-left:-1.5px}
+select.chip,input.chip{cursor:auto;font-weight:500;appearance:none;-webkit-appearance:none}
+select.chip.pri{font-weight:700;border-width:2px}
+select.chip{cursor:pointer;padding-right:26px;background:linear-gradient(45deg,transparent 50%,var(--ink) 50%) calc(100% - 13px) 50%/5px 5px no-repeat,linear-gradient(-45deg,transparent 50%,var(--ink) 50%) calc(100% - 8px) 50%/5px 5px no-repeat}
+input.chip{min-width:0;width:240px}
+input.chip::placeholder{color:var(--ink-2)}
+
+header.top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px var(--pad);border-bottom:1.5px solid var(--rule)}
+header.top .meta{display:flex;gap:6px 28px;flex-wrap:wrap}
+
+.hero{background:var(--navy);color:var(--white);border-bottom:0}
+.hero h1 span{color:#FF4D5E}
+.hero h1{font-size:clamp(64px,12.5vw,220px);position:relative}
+.hero{overflow:hidden}
+.hero .lede,.hero .corners{position:relative}
+/* Hero photo: a real-time crime center operator in two colors (navy and pale steel) so it sits behind the headline.
+   The image already fades into navy on its left and edges; a mask softens it further. */
+.hero-photo{position:absolute;inset:0 0 0 auto;width:min(70%,1100px);pointer-events:none;
+  background:url("hero.jpg") right center/auto 100% no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%);
+  transform-origin:70% 45%;will-change:transform}
+@media (max-width:900px){.hero-photo{width:100%;opacity:.38}}
+.hero .lede{max-width:44ch;font-size:clamp(18px,1.6vw,22px);line-height:1.35;font-weight:500;margin-top:26px}
+.hero .corners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+
+.about{padding-block:clamp(22px,3vw,34px)}
+.about-in{display:grid;gap:10px;max-width:78ch}
+.about-in p{font-size:clamp(16px,1.25vw,18px);line-height:1.5}
+.about-in p.dim{font-size:14px}
+.about .wip{display:inline-block;margin-left:10px;padding:3px 7px;border:1.5px solid var(--ink);color:var(--ink);font:800 10.5px/1 Archivo;letter-spacing:.08em;vertical-align:1px}
+.about .by{display:block;margin-top:4px;font-weight:600;color:var(--ink)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:22px;align-items:center}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 320px;margin-top:18px;border:1.5px solid var(--rule)}
+.mapbox{position:relative;min-height:600px}
+#map{position:absolute;inset:0;background:var(--land)}
+.side{border-left:1.5px solid var(--rule);display:flex;flex-direction:column;min-width:0}
+.side>div{padding:14px 16px;border-bottom:1px solid var(--rule)}
+.side>div:last-child{border-bottom:0;flex:1}
+.side .big{font-size:56px}
+.key{list-style:none;display:grid;gap:8px;margin-top:8px;font-size:13px;font-weight:600}
+.key li{display:flex;align-items:center;gap:9px}
+.dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);flex:none}
+.dot.law{background:var(--law)} .dot.fire{background:var(--fire)} .dot.other{background:var(--other)}
+.dot.big{width:17px;height:17px}
+.ring{width:17px;height:17px;border-radius:50%;border:2px dashed var(--ink);flex:none}
+.layers{list-style:none;display:grid;gap:6px;margin:6px 0 0;padding:0;font-size:13px;font-weight:600}
+.lbl.grp{margin-top:14px}
+#layers .lbl:first-child{margin-top:0}
+#segColor{margin-top:6px}
+#segColor .chip{padding:5px 9px;font-size:12px}
+.key2{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;margin:10px 0 0;padding:0;font-size:12px;font-weight:500;color:var(--ink-2)}
+.key2 li{display:flex;align-items:center;gap:7px;min-width:0}
+.key2 li.wide{grid-column:1/-1}
+.dot.hollow{background:var(--paper)}
+.dot.dash{background:transparent;border-style:dashed}
+.layers label{display:flex;align-items:center;gap:9px;cursor:pointer}
+.layers input{accent-color:var(--ink);width:15px;height:15px;margin:0;flex:none}
+.layers .n{margin-left:auto;font-weight:500;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.layers .sub{padding-left:24px}
+.sq{width:11px;height:11px;border:1.5px solid var(--ink-2);flex:none}
+.why{list-style:none;margin-top:6px;display:grid;gap:3px;font-size:13px}
+.why li{border:0!important;padding:0!important}
+.why li::before{content:"+ ";color:var(--ink-2)}
+.lvl{display:inline-block;font:800 11px/1 Archivo;letter-spacing:.06em;text-transform:uppercase;padding:4px 6px;border:1.5px solid var(--ink)}
+.lvl.high{background:var(--ink);color:var(--paper)}
+/* Details strip under the map: title on the left, details flowing into columns across the width. */
+#pick{grid-column:1/-1;border-top:1.5px solid var(--rule);padding:16px 18px 18px;font-size:14px;
+  display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);column-gap:28px;align-items:start}
+#pick>*:not(ul){grid-column:1}
+#pick>ul{grid-column:2;grid-row:1/span 4;list-style:none;margin:0;columns:2 300px;column-gap:28px}
+#pick>ul>li{break-inside:avoid;border-top:1px solid var(--line-dim);padding:6px 0 8px}
+#pick ul ul{list-style:none;margin-top:6px;display:grid;gap:6px}
+#pick ul ul li{border-top:1px solid var(--line-dim);padding-top:6px}
+#pick h3{font-size:30px;margin:4px 0 6px}
+
+.leaflet-container{font-family:Archivo,system-ui,sans-serif;background:var(--land);color:var(--ink)}
+.leaflet-container .leaflet-control-attribution{font:9.5px/1.3 Archivo;background:var(--paper);color:var(--ink-2)}
+.leaflet-control-attribution a{color:var(--ink-2)!important}
+.leaflet-bar a{background:var(--paper);color:var(--ink);border-radius:0!important;border-bottom-color:var(--ink)}
+.leaflet-bar{border:1.5px solid var(--ink)!important;border-radius:0!important}
+.leaflet-tooltip{font:600 12px/1.3 Archivo;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:0;box-shadow:none}
+.leaflet-tooltip:before{display:none}
+.base-osm{filter:grayscale(1) contrast(.9) brightness(1.05)}
+
+.kpis{background:var(--red);color:var(--white);border-bottom:1.5px solid var(--black)}
+.kgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1.5px solid var(--white);margin-top:22px}
+.kgrid>div{padding:16px 14px 18px 0;border-right:1px solid rgba(255,255,255,.45)}
+.kgrid>div+div{padding-left:14px}
+.kgrid>div:last-child{border-right:0}
+.kgrid .x{font-size:clamp(48px,5.6vw,92px)}
+.kgrid p{font-size:13.5px;font-weight:600;margin-top:8px}
+.bars{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px;align-items:end;height:150px;margin-top:26px;border-bottom:1.5px solid var(--white)}
+.bars div{background:var(--white);position:relative;min-height:1px}
+.bars div span{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font:700 11px/1.6 Archivo;font-variant-numeric:tabular-nums}
+.vbars{display:grid;grid-template-columns:max-content minmax(0,1fr) 3ch;gap:7px 14px;align-items:center;margin-top:12px;max-width:760px;font:600 14px/1.2 Archivo}
+.vbars .bar{height:14px;background:var(--white);min-width:2px}
+.vbars .n{font-variant-numeric:tabular-nums;text-align:right}
+.vbars .dim2{opacity:.75;font-weight:500}
+.vbars .vhead{grid-column:1/-1;font:700 11px/1 Archivo;letter-spacing:.08em;text-transform:uppercase;margin-top:12px;opacity:.85}
+.vbars .vnote{grid-column:1/-1;font:500 12px/1.35 Archivo;opacity:.75;margin:-3px 0 2px}
+.barlbl{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px;margin-top:6px;font:600 11px/1.2 Archivo;text-align:center}
+
+.notice{border:1.5px solid var(--rule);padding:18px;margin-top:22px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;max-width:980px}
+.notice .tag{background:var(--navy);color:var(--white);font:800 13px/1 Archivo;font-stretch:62%;letter-spacing:.04em;text-transform:uppercase;padding:7px 9px}
+.notice p+p{margin-top:8px}
+.notice p{font-size:15px}
+code{font:600 13px/1.4 ui-monospace,Menlo,monospace;background:var(--land);padding:1px 5px}
+
+.tablewrap{margin-top:18px;border:1.5px solid var(--rule);overflow:auto;max-height:720px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{position:sticky;top:0;background:var(--paper);text-align:left;font:700 10.5px/1.3 Archivo;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);padding:10px 12px;border-bottom:1.5px solid var(--rule);white-space:nowrap}
+th button{all:unset;cursor:pointer}
+th button:focus-visible{outline:3px solid var(--focus)}
+td{padding:8px 12px;border-bottom:1px solid var(--line-dim);vertical-align:top}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+tr[data-i]{cursor:pointer}
+tr[data-i]:hover td{background:var(--land)}
+.sources{list-style:none;display:grid;gap:10px;margin-top:18px;max-width:80ch;font-size:15px}
+footer{padding:20px var(--pad);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cite{font-size:12px;color:var(--ink-2);align-self:center}
+
+@media (max-width:900px){
+  .mapgrid{grid-template-columns:minmax(0,1fr)}
+  #pick{grid-template-columns:minmax(0,1fr)}
+  #pick>ul{grid-column:1;grid-row:auto;margin-top:8px}
+  .side{border-left:0;border-top:1.5px solid var(--rule)}
+  .kgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .kgrid>div:nth-child(3){border-right:0}
+  .kgrid>div:nth-child(n+4){border-top:1px solid rgba(10,10,10,.5)}
+  .kgrid>div:nth-child(4){padding-left:0}
+}
+@media (max-width:560px){
+  .nt .whycol{display:none}
+  .tablewrap{max-height:none}
+  .mapbox{min-height:440px}
+  .hero .corners{grid-template-columns:minmax(0,1fr)}
+  .kgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kgrid>div{border-right:0!important;padding-left:0!important}
+  .kgrid>div:nth-child(n+3){border-top:1px solid rgba(10,10,10,.5)}
+  input.chip{width:100%}
+  .notice{grid-template-columns:minmax(0,1fr)}
+  .barlbl span:nth-child(even){visibility:hidden}
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="meta"><span><b>DFR Adoption Map</b></span><span id="builtMeta"></span><span>Sources: agency and city records, vendor announcements, FAA waiver list (FOIA)</span></div>
+  <button class="toggle" id="theme" type="button">Dark</button>
+</header>
+
+<section class="panel hero">
+  <div class="hero-photo" id="heroPhoto" role="img" aria-label="A real-time crime center operator watching map and live camera feeds"></div>
+  <h1 class="x">Drone as<br>first <span>responder</span></h1>
+  <p class="lede" id="lede"></p>
+  <div class="corners meta">
+    <div><b>Programs</b><br>Who runs DFR, verified agency by agency</div>
+    <div><b>Equipment</b><br>Aircraft maker and DFR platform, with a source for each</div>
+    <div><b>Built on</b><br>FAA 91.113 public-safety waivers (FOIA)</div>
+  </div>
+</section>
+
+<section class="panel about" id="about">
+  <div class="about-in">
+    <div class="lbl">Why I built this <span class="wip">Work in progress</span></div>
+    <p>I built this dashboard to understand where drone as first responder programs are across the country and where they actually fly. Holding an FAA waiver is only the start. I wanted to see how much of each city or county the drones really cover, and which aircraft and platforms agencies are choosing, to understand how specific DFR products are being adopted.</p>
+    <p class="dim">42 states (shaded on the map) have been researched agency by agency. Other states are next, and the data will keep improving as it is checked. <span class="by">Basil Yap</span></p>
+  </div>
+</section>
+
+<section class="panel" id="mapsec">
+  <h2 class="x">Where they fly</h2>
+  <p class="kicker">Find DFR programs and the equipment they fly. Pick an <b>aircraft maker</b> or <b>DFR platform</b> to filter the map and color each agency by its equipment, with sources for every claim. Agency-by-agency research covers 42 states (shaded on the map) so far. Dots are agencies with the FAA's 91.113 public-safety drone waiver. Click any agency for details, or type a name and press Enter.</p>
+  <div class="controls">
+    <select class="chip pri" id="fAircraft" aria-label="Aircraft maker"></select>
+    <select class="chip pri" id="fPlatform" aria-label="DFR platform"></select>
+    <select class="chip" id="state" aria-label="State"></select>
+    <input class="chip" id="q" type="search" placeholder="Search agency or city" aria-label="Search agency or city">
+    <div class="seg" role="group" aria-label="Agency type" id="segCat"></div>
+    <div class="seg" role="group" aria-label="Approved ceiling" id="segAlt"></div>
+  </div>
+  <div class="mapgrid">
+    <div class="mapbox"><div id="map" role="region" aria-label="Map of DFR agencies"></div></div>
+    <div class="side">
+      <div><div class="lbl">Showing</div><div class="x big num" id="shown">0</div><div class="dim" id="shownSub"></div></div>
+      <div>
+        <div id="layers"></div>
+        <div class="lbl grp">Color by</div>
+        <div class="seg" role="group" aria-label="Color by" id="segColor"></div>
+        <ul class="key2" id="ckey"></ul>
+      </div>
+    </div>
+    <div id="pick" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="panel kpis">
+  <h2 class="x">The count</h2>
+  <div class="kgrid" id="kgrid"></div>
+  <div class="lbl" style="color:var(--white);margin-top:34px" id="vlbl"></div>
+  <div class="vbars" id="vbars"></div>
+  <div class="lbl" style="color:var(--white);margin-top:40px">FAA 91.113 public-safety waivers approved per month (all agencies, any drone use)</div>
+  <div class="bars" id="bars" role="img"></div>
+  <div class="barlbl" id="barlbl"></div>
+</section>
+
+<section class="panel">
+  <h2 class="x">DFR programs</h2>
+  <p class="kicker" id="dirSub"></p>
+  <div class="controls"><button class="chip" type="button" id="csvAgencies">Download this list (CSV)</button><span class="cite">CC BY 4.0, credit Basil Yap, DFR Adoption Map</span></div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th><button data-k="name">Agency</button></th><th><button data-k="city">City</button></th><th><button data-k="state">State</button></th>
+        <th><button data-k="dfr_rank">DFR program</button></th><th><button data-k="aircraft_sort">Aircraft</button></th><th><button data-k="platform_sort">Platform</button></th>
+        <th><button data-k="max_alt">Waiver ceiling</button></th><th><button data-k="first">Waiver since</button></th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2 class="x">How this works</h2>
+  <ul class="sources" id="sources"></ul>
+</section>
+<footer class="meta"><span>&copy; 2026 Basil Yap. Licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</span><span class="cite">Reuse requires credit: Basil Yap, <i>DFR Adoption Map</i>, https://basilbuildsai.github.io/dfr-program-map/</span><span id="footBuilt"></span></footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="data.js"></script>
+<script>
+const D = window.__DFR_DATA__;
+const A = D.agencies, ATLAS = D.atlas || [], DR = D.dr || [];
+const $ = s => document.querySelector(s);
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = n => n.toLocaleString("en-US");
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const day = d => d ? `${MON[+d.slice(5,7)-1]} ${+d.slice(8,10)}, ${d.slice(0,4)}` : "";
+const CAT = {"Law enforcement":"law", "Fire and emergency management":"fire"};
+const catKey = a => CAT[a.category] || "other";
+const CAT_LABEL = {law:"Law enforcement", fire:"Fire and EM", other:"Federal and other"};
+const SRC = {waiver:"Holds the FAA 91.113 public-safety waiver", atlas:"Drone program in Atlas of Surveillance", dr:"Drone program in the DRONERESPONDERS survey",
+  federal:"Federal agency (Customs and Border Protection) with the FAA 91.113 waiver"};
+// DFR vendor from open-source research (news, vendor announcements, agency pages, council records).
+// Vendor colors avoid the blue and red used for agency type; the two schemes are never shown together.
+const VCOL = {"Flock Safety":"#16A34A", "Axon":"#8B5CF6", "Skydio":"#06B6D4", "DJI":"#EAB308", "Brinc":"#EC4899",
+  "Motorola Solutions":"#F97316", "Paladin":"#84CC16", "Combination":"#64748B", "Other":"#9CA3AF"};
+const LAYER_NAME = {aircraft:"DFR aircraft", platform:"DFR platform"};
+const STATUS = {operational:"DFR operational", launched_pilot:"DFR pilot launched", approved_or_purchased:"DFR approved or purchased",
+  planned_or_considering:"DFR planned or under consideration", handheld_only:"Handheld drones only (no DFR found)", no_evidence:"No public evidence found", not_researched:"Not researched yet"};
+const isDfr = o => o && ["operational","launched_pilot","approved_or_purchased"].includes(o.dfr_status);
+// Family of an agency's DFR aircraft or platform. v1 records (one combined vendor) use it for both layers.
+const famOf = (o, layer) => o.version === 2 ? o[layer + "_family"] : (o.vendor_family === "Multiple" ? "Combination" : o.vendor_family);
+const vendorOf = (a, layer = ON.color === "platform" ? "platform" : "aircraft") => {
+  if (!a.osint || a.osint.dfr_status === "not_researched") return "unresearched";
+  if (a.osint.unverified) return "unverified";
+  const f = famOf(a.osint, layer); return !f ? (isDfr(a.osint) ? "unknown" : "none") : f in VCOL ? f : "Other"; };
+const vendorText = o => !o ? "" : o.version === 2 ? [o.aircraft.value && "Aircraft: " + o.aircraft.value, o.platform.value && "Platform: " + o.platform.value].filter(Boolean).join(" · ") : o.vendor;
+const VBY = new Map(A.map(a => [`${a.name}|${a.state}`, a]));
+for (const a of A) a.vendor_sort = a.osint ? (vendorText(a.osint) || "~") : "~~";
+
+// --- theme -----------------------------------------------------------------
+const root = document.documentElement;
+const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+try { const t = localStorage.getItem("dfr-theme"); if (t) root.dataset.theme = t; } catch (e) {}
+function syncThemeBtn(){ $("#theme").textContent = isDark() ? "Light" : "Dark"; }
+$("#theme").onclick = () => {
+  root.dataset.theme = isDark() ? "light" : "dark";
+  try { localStorage.setItem("dfr-theme", root.dataset.theme); } catch (e) {}
+  syncThemeBtn(); setBasemap(); drawStates(); draw();
+};
+syncThemeBtn();
+
+// --- copy --------------------------------------------------------------------
+const states = [...new Set(A.map(a => a.state))].sort();
+$("#lede").textContent = `How widely are police and fire departments adopting drone as first responder (DFR), and whose drones do they fly? This map measures DFR adoption agency by agency, with the aircraft maker and DFR platform behind each one and a source for every claim. It starts from the ${fmt(A.length)} agencies the FAA approved to fly public-safety drones.`;
+$("#builtMeta").innerHTML = `Updated <b>${day(D.built)}</b>`;
+$("#footBuilt").textContent = `Data as of ${day(D.built)}.`;
+
+// --- filters and layers ---------------------------------------------------------
+const F = {cat:"all", alt:"all", state:"", q:"", aircraft:"", platform:""};
+// Layer icons are neutral (ink); color is set only by "Color by".
+const LAYER_GROUPS = [
+  ["Agencies", [
+    {k:"states", label:"State outlines · shaded states are researched", on:true, key:'<span class="sq" style="background:rgba(59,130,246,.35);border-color:rgba(147,197,253,.9)"></span>'},
+    {k:"waiver", label:"91.113 waiver holders", on:true, key:'<span class="dot" style="background:var(--ink)"></span>'},
+    {k:"outlines", label:"Their city or county outlines", on:false, key:'<span class="sq" style="border-color:var(--ink);border-style:dashed"></span>'},
+    {k:"atlas", label:"Other drone programs (Atlas)", on:false, key:'<span class="dot hollow" style="border-color:var(--ink-2)"></span>'},
+    {k:"dr", label:"Other drone programs (DRONERESPONDERS)", on:false, key:'<span class="sq"></span>'}]],
+];
+const LAYERS = LAYER_GROUPS.flatMap(g => g[1]);
+const ON = {color:"type"};
+try { Object.assign(ON, JSON.parse(localStorage.getItem("dfr-layers") || "{}")); } catch (e) {}
+for (const l of LAYERS) if (!(l.k in ON)) ON[l.k] = l.on;
+const saveOn = () => { try { localStorage.setItem("dfr-layers", JSON.stringify(ON)); } catch (err) {} };
+$("#layers").innerHTML = LAYER_GROUPS.map(([title, ls], i) => `<div class="lbl${i ? " grp" : ""}">${title}</div><ul class="layers">${ls.map(l =>
+  `<li><label><input type="checkbox" data-k="${l.k}"${ON[l.k] ? " checked" : ""}>${l.key}<span>${l.label}</span><span class="n" data-n="${l.k}"></span></label></li>`).join("")}</ul>`).join("");
+$("#layers").onchange = e => { ON[e.target.dataset.k] = e.target.checked; saveOn();
+  if (e.target.dataset.k === "outlines" && ON.outlines) loadOutlines(); drawStates(); draw(); };
+if (ON.color === "vendor") ON.color = "aircraft";
+$("#segColor").innerHTML = [["type","Agency type"],["aircraft","DFR aircraft"],["platform","DFR platform"]].map(([v, l]) => `<button class="chip" type="button" data-v="${v}" aria-pressed="${ON.color === v}">${l}</button>`).join("");
+$("#segColor").onclick = e => { const b = e.target.closest("button"); if (!b) return; ON.color = b.dataset.v; saveOn();
+  $("#segColor").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); };
+
+function seg(el, key, opts){
+  el.innerHTML = opts.map(([v, l]) => `<button class="chip" type="button" data-v="${v}" aria-pressed="${F[key] === v}">${l}</button>`).join("");
+  el.onclick = e => { const b = e.target.closest("button"); if (!b) return; F[key] = b.dataset.v;
+    el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); afterFilter(); };
+}
+seg($("#segCat"), "cat", [["all","All"],["law","Law enforcement"],["fire","Fire and EM"],["other","Other"]]);
+seg($("#segAlt"), "alt", [["all","Any ceiling"],["200","200 ft"],["400","400 ft"]]);
+$("#state").innerHTML = `<option value="">All states</option>` + states.map(s => `<option>${s}</option>`).join("");
+$("#state").onchange = e => { F.state = e.target.value; afterFilter(true); };
+// Equipment filters: aircraft maker and DFR platform, each with "any DFR program". Choosing one also
+// colors the map by that layer, so the filter and the colors always describe the same thing.
+const anyVendor = (a, v) => ["aircraft", "platform"].some(l => vendorOf(a, l) === v);
+const vMatch = (a, layer, v) => v === "dfr" ? !!(a.osint && isDfr(a.osint) && !a.osint.unverified) : vendorOf(a, layer) === v;
+function equipOptions(layer){
+  const n = v => A.filter(a => vMatch(a, layer, v)).length;
+  const fams = Object.keys(VCOL).filter(v => n(v));
+  const all = layer === "aircraft" ? "Any aircraft maker" : "Any DFR platform";
+  return [["", all], ["dfr", `Any DFR program (${n("dfr")})`], ...fams.map(v => [v, `${v} (${n(v)})`]),
+    ["unknown", `DFR, ${layer === "aircraft" ? "maker" : "platform"} not found (${n("unknown")})`], ["unverified", `Unverified claims (${n("unverified")})`]]
+    .map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+}
+$("#fAircraft").innerHTML = equipOptions("aircraft");
+$("#fPlatform").innerHTML = equipOptions("platform");
+function setEquip(layer, v){
+  F[layer] = v;
+  if (v && v !== "dfr") { ON.color = layer;
+    $("#segColor").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === layer)); }
+  afterFilter(true);
+}
+$("#fAircraft").onchange = e => setEquip("aircraft", e.target.value);
+$("#fPlatform").onchange = e => setEquip("platform", e.target.value);
+$("#q").oninput = e => { F.q = e.target.value.trim().toLowerCase(); afterFilter(); };
+$("#q").onkeydown = e => { if (e.key !== "Enter") return;  // Enter: jump to the first matching agency
+  const a = A.filter(pass).find(a => a.lat != null); if (a) pick("agency", a, true); };
+const placeOk = x => (!F.state || x.state === F.state) && (!F.q || `${x.name} ${x.city} ${x.state}`.toLowerCase().includes(F.q));
+const pass = a => (F.cat === "all" || catKey(a) === F.cat) && (F.alt === "all" || a.max_alt === +F.alt) && placeOk(a)
+  && (!F.aircraft || vMatch(a, "aircraft", F.aircraft)) && (!F.platform || vMatch(a, "platform", F.platform));
+function visible(sel){
+  if (!sel) return false;
+  const x = sel.item;
+  return sel.type === "agency" ? pass(x) : placeOk(x);
+}
+function afterFilter(fit){
+  if (selected && !visible(selected)) { selected = null; render(); }
+  // A search that narrows to one waiver agency selects it.
+  const hits = F.q ? A.filter(pass).filter(a => a.lat != null) : [];
+  if (hits.length === 1 && selected?.item !== hits[0]) { pick("agency", hits[0], true); return; }
+  draw(fit);
+}
+
+// --- map -----------------------------------------------------------------------
+const map = L.map("map", {zoomSnap:.25, scrollWheelZoom:false, preferCanvas:true, worldCopyJump:true}).setView([38.5, -96], 4);
+L.control.scale({imperial:true, metric:false}).addTo(map);
+map.on("focus click", () => map.scrollWheelZoom.enable());
+const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/{s}/MapServer/tile/{z}/{y}/{x}";
+let base = null;
+function setBasemap(){
+  if (base) map.removeLayer(base);
+  let err = 0, ok = 0;
+  base = L.tileLayer(ESRI.replace("{s}", isDark() ? "World_Dark_Gray_Base" : "World_Light_Gray_Base"),
+    {maxZoom:16, attribution:"Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors · Boundaries: U.S. Census"})
+    .on("tileload", () => ok++)
+    .on("tileerror", () => { if (++err >= 4 && err > ok) { map.removeLayer(base);
+      base = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:18, className:"base-osm",
+        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map); } })
+    .addTo(map);
+}
+setBasemap();
+const G = {outlines:L.layerGroup().addTo(map),
+  other:L.layerGroup().addTo(map), dots:L.layerGroup().addTo(map), focus:L.layerGroup().addTo(map)};
+let selected = null;  // {type:"agency"|"atlas"|"dr", item}
+
+// State outlines sit under everything: faint lines everywhere, a light fill and firmer edge where research is done.
+map.createPane("states").style.zIndex = 250;
+map.getPane("states").style.pointerEvents = "none";
+const stateRenderer = L.canvas({pane:"states"}), stateLayer = L.layerGroup().addTo(map);
+let STATES = null;
+fetch("states.json").then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => { STATES = j; drawStates(); });
+function drawStates(){
+  stateLayer.clearLayers();
+  if (!STATES || !ON.states) return;
+  const dark = isDark(), done = new Set(D.researched || []);
+  for (const [st, rings] of Object.entries(STATES)) {
+    const r = done.has(st);
+    L.polygon(rings, {renderer:stateRenderer, interactive:false, smoothFactor:1,
+      color: r ? (dark ? "rgba(147,197,253,.75)" : "rgba(29,78,216,.6)") : (dark ? "rgba(255,255,255,.22)" : "rgba(0,0,0,.2)"),
+      weight: r ? 1.6 : 0.8, fill: r, fillColor: dark ? "#3B82F6" : "#1D4ED8", fillOpacity: dark ? .13 : .07}).addTo(stateLayer);
+  }
+}
+
+// Jurisdiction outlines live in boundaries.json next to the page and load on first use.
+let OUT = null, outLoading = null;
+function loadOutlines(){
+  if (OUT || outLoading) return outLoading;
+  outLoading = fetch("boundaries.json").then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => { OUT = j; draw(); });
+  return outLoading;
+}
+
+function atlasBlock(x){
+  return x ? `<li><b>Atlas of Surveillance</b><br>${esc(x.summary)}${x.vendor ? `<br><span class="dim">Vendor: ${esc(x.vendor)}</span>` : ""}${x.links.length ? `<br><span class="dim">${x.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.source || "source")}${l.date ? " " + esc(l.date) : ""}</a>`).join(" · ")}</span>` : ""}</li>` : "";
+}
+function drBlock(x){
+  return x ? `<li><b>DRONERESPONDERS survey</b><br><span class="dim">${[x.discipline, x.auth.length ? "Flies under: " + x.auth.join(", ") : "", x.started ? "Program since " + x.started : "", x.fleet ? "Fleet " + x.fleet : "", x.pilots ? "Pilots " + x.pilots : "", x.missions ? x.missions + " missions a month" : "", x.dfr ? "DFR: " + x.dfr.replace(/([a-z])([A-Z])/g, "$1 $2").toLowerCase() : ""].filter(Boolean).map(esc).join(" · ")}</span></li>` : "";
+}
+const CONF_TAG = c => c && c !== "unknown" ? ` <span class="lvl${c === "confirmed" ? " high" : ""}">${esc(c)}</span>` : "";
+function osintBlock(o){
+  if (!o) return "";
+  if (o.version === 2) {
+    const ev = o.evidence || [];
+    const layer = (k, label) => o[k].value ? `<br>${label}: <b>${esc(o[k].value)}</b>${CONF_TAG(o[k].confidence)}${o[k].evidence?.length ? ` <span class="dim">[${o[k].evidence.map(i => i + 1).join(", ")}]</span>` : ""}${o[k].basis ? `<br><span class="dim">${esc(o[k].basis)}</span>` : ""}` : `<br><span class="dim">${label}: not found</span>`;
+    const chk = !o.check?.ran ? "" : o.check.errors.length ? `<br><span class="lvl">unverified</span> <span class="dim">Automated check found ${o.check.errors.length} problem${o.check.errors.length > 1 ? "s" : ""}: ${esc(o.check.errors.slice(0, 2).join("; "))}</span>` : `<br><span class="dim">Automated check passed${o.check.warnings.length ? ` with ${o.check.warnings.length} note${o.check.warnings.length > 1 ? "s" : ""}` : ""}.</span>`;
+    const rv = o.review === "disputed" ? `<br><span class="lvl">disputed</span> <span class="dim">A second reviewer disagreed: ${esc(o.review_reason)}</span>` : o.review === "agreed" ? `<br><span class="dim">Second reviewer agreed.</span>` : o.review === "human_verified" ? `<br><span class="dim">Verified by hand.</span>` : "";
+    return `<li><b>DFR program: ${esc(STATUS[o.dfr_status] || o.dfr_status)}</b>${o.unverified && !o.check?.errors?.length && o.review !== "disputed" ? ` <span class="lvl">unverified</span>` : ""}${rv}
+      ${o.transition ? `<br><span class="lvl high">switching vendors</span> <span class="dim">${esc(o.transition.note)}</span>` : ""}
+      ${layer("aircraft", "Aircraft")}${layer("platform", "Platform")}${o.contract_holder.value ? layer("contract_holder", "Contract") : ""}
+      <br><span class="dim">${[o.docks === true ? "Uses docks" : o.docks === false ? "No docks" : "", o.start_date ? "Since " + esc(o.start_date) : ""].filter(Boolean).join(" · ")}</span>${chk}
+      ${ev.length ? `<ul>${ev.slice(0, 6).map((e, i) => `<li>[${i + 1}] <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.posted_by || e.source_type || "source")}${e.date ? " · " + esc(e.date) : ""}</a> <span class="dim">${esc(e.source_type || "")}</span>${e.quote ? `<br><span class="dim">“${esc(e.quote)}”</span>` : ""}</li>`).join("")}</ul>` : ""}
+      ${(o.history || []).length ? `<span class="dim">History: ${o.history.map(h => esc((h.date ? h.date + " " : "") + (h.note || ""))).join("; ")}</span><br>` : ""}
+      ${o.notes ? `<span class="dim">${esc(o.notes)}</span><br>` : ""}<span class="dim">Open-source research under the playbook, checked ${day(o.checked)}.</span></li>`;
+  }
+  const ev = (o.evidence || []).slice(0, 5);
+  return `<li><b>DFR program: ${esc(STATUS[o.dfr_status] || o.dfr_status)}</b>${o.vendor ? `<br>Vendor: <b>${esc(o.vendor)}</b>` : ""}${o.system ? ` · ${esc(o.system)}` : ""}
+    <br><span class="dim">${[o.docks === true ? "Uses docks" : o.docks === false ? "No docks" : "", o.start_date ? "Since " + esc(o.start_date) : "", o.confidence ? "Confidence: " + esc(o.confidence) : ""].filter(Boolean).join(" · ")}</span>
+    ${ev.length ? `<ul>${ev.map(e => `<li><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.source_type || "source")}${e.date ? " " + esc(e.date) : ""}</a>${e.quote ? `<br><span class="dim">“${esc(e.quote)}”</span>` : ""}</li>`).join("")}</ul>` : ""}
+    ${o.notes ? `<span class="dim">${esc(o.notes)}</span><br>` : ""}<span class="dim">Open-source research, checked ${day(o.checked)}.</span></li>`;
+}
+const placeNote = x => x.precision === "county" ? `<li class="dim">County agency, outlined by its county.</li>`
+  : x.precision === "statewide" ? `<li class="dim">Statewide or federal agency, shown at its headquarters.</li>`
+  : x.precision === "approx" ? `<li class="dim">Approximate location.</li>` : x.lat == null ? `<li class="dim">Not on the map. The waiver gives no usable location.</li>` : "";
+function render(){
+  const s = selected;
+  if (!s) { $("#pick").innerHTML = `<div class="lbl">Selected</div><p class="dim" style="margin-top:6px">Click an agency on the map to see its details here.</p>`; return; }
+  const x = s.item;
+  if (s.type === "agency") {
+    $("#pick").innerHTML = `<div class="lbl">91.113 waiver holder</div><h3 class="x">${esc(x.name)}</h3>
+      <div class="dim">${esc(x.city ? x.city + ", " : "")}${esc(x.state)} · ${esc(x.category)}</div>
+      <ul>${x.waivers.map(w => `<li><b>${w.alt} ft</b> waiver<br><span class="dim">Effective ${day(w.start) || "n/a"}, expires ${day(w.end) || "n/a"}${w.amendment ? ", amendment " + esc(w.amendment) : ""}${w.cmd_daa ? `, detect-and-avoid document provided to the FAA <a href="#src-daa" title="What this means and where it comes from">[note]</a>` : ""}</span></li>`).join("")}
+      ${osintBlock(x.osint)}${atlasBlock(x.atlas)}${drBlock(x.dr)}${placeNote(x)}</ul>`;
+  } else {
+    $("#pick").innerHTML = `<div class="lbl">${s.type === "atlas" ? "Drone program, Atlas of Surveillance" : "Drone program, DRONERESPONDERS survey"}</div><h3 class="x">${esc(x.name)}</h3>
+      <div class="dim">${esc(x.city ? x.city + ", " : "")}${esc(x.state)} · Not on the waiver list</div>
+      <ul>${s.type === "atlas" ? atlasBlock(x) + drBlock(x.dr) : drBlock(x)}${placeNote(x)}</ul>`;
+  }
+}
+function pick(type, item, fly){
+  selected = {type, item};
+  if (!OUT) loadOutlines();
+  render();
+  if (fly && item.lat != null) map.flyTo([item.lat, item.lon], Math.max(map.getZoom(), 10), {duration:.6});
+  draw();
+}
+function outlineOf(geoid, style){
+  const rings = OUT && geoid && OUT[geoid];
+  return rings ? L.polygon(rings, {...style, fill:false, interactive:false}) : null;
+}
+
+function draw(fit){
+  for (const g of Object.values(G)) g.clearLayers();
+  const ink = css("--ink"), ink2 = css("--ink-2"), selc = css("--sel");
+  const col = {law:css("--law"), fire:css("--fire"), other:css("--other")};
+  const shown = A.filter(pass), placed = shown.filter(a => a.lat != null);
+  const sel = selected?.item;
+  if (ON.outlines && OUT) for (const a of placed) {
+    const p = outlineOf(a.geoid, {color:col[catKey(a)] === css("--other") ? ink2 : col[catKey(a)], weight:1, opacity:.55, dashArray:"4 3"});
+    if (p) p.addTo(G.outlines);
+  }
+  if (ON.waiver) for (const a of placed) {
+    const on = a === sel;
+    const byV = ON.color !== "type", vf = vendorOf(a);
+    const fillc = byV ? (VCOL[vf] || css("--paper")) : col[catKey(a)];
+    const hollow = byV && (vf === "unknown" || vf === "unverified");
+    const r = (a.max_alt >= 400 ? 7 : 4.5) + (on ? 2 : 0);
+    // The selected dot sits above its city outline with its own color; a separate halo marks the selection.
+    if (on) L.circleMarker([a.lat, a.lon], {radius:r + 5, color:selc, weight:2.5, fill:false, interactive:false}).addTo(G.focus);
+    L.circleMarker([a.lat, a.lon], {radius:r, color:byV && !VCOL[vf] ? ink2 : ink,
+      weight:1.2, fillColor:fillc, fillOpacity:hollow ? 0 : 1, dashArray:hollow ? "2 2" : null})
+      .bindTooltip(`${esc(a.name)}<br><span style="font-weight:500">${esc(a.city ? a.city + ", " : "")}${a.state} · ${a.max_alt} ft${vendorText(a.osint) ? " · " + esc(vendorText(a.osint)) : ""}</span>`, {direction:"top", offset:[0,-6]})
+      .on("click", () => pick("agency", a)).addTo(on ? G.focus : G.dots);
+  }
+  const atl = ATLAS.filter(x => x.lat != null && placeOk(x)), drs = DR.filter(x => x.lat != null && placeOk(x));
+  for (const [t, list] of [["atlas", ON.atlas ? atl : []], ["dr", ON.dr ? drs : []]]) for (const x of list) {
+    const on = x === sel;
+    L.circleMarker([x.lat, x.lon], {radius:on ? 6 : 3.5, color:on ? selc : ink2, weight:on ? 3 : 1.2, fill:t === "dr", fillColor:ink2, fillOpacity:.6})
+      .bindTooltip(`${esc(x.name)}<br><span style="font-weight:500">${esc(x.city ? x.city + ", " : "")}${x.state} · ${t === "atlas" ? "Atlas" : "DRONERESPONDERS"}</span>`, {direction:"top"})
+      .on("click", () => pick(t, x)).addTo(G.other);
+  }
+  // Selected item: outline its jurisdiction.
+  if (sel && OUT) { const p = outlineOf(sel.geoid, {color:selc, weight:2.5}); if (p) p.addTo(G.focus); }
+  G.focus.eachLayer(l => l instanceof L.CircleMarker && l.bringToFront());  // the selected dot and halo stay above outlines
+  // Layer counts follow the filters.
+  const cnt = {waiver:shown.length, outlines:placed.length, atlas:atl.length, dr:drs.length};
+  document.querySelectorAll("#layers [data-n]").forEach(el => el.textContent = el.dataset.n in cnt ? fmt(cnt[el.dataset.n]) : "");
+  const nOther = (ON.atlas ? atl.length : 0) + (ON.dr ? drs.length : 0);
+  $("#shown").textContent = fmt((ON.waiver ? shown.length : 0) + nOther);
+  $("#shownSub").textContent = [ON.waiver ? `${fmt(shown.length)} waiver ${shown.length === 1 ? "holder" : "holders"}` : "",
+    nOther ? `${fmt(nOther)} other drone programs` : ""].filter(Boolean).join(" · ");
+  if (fit && (F.state || F.aircraft || F.platform)) {  // zoom to the matching agencies
+    const pts = placed.map(a => [a.lat, a.lon]);
+    if (pts.length) map.fitBounds(L.latLngBounds(pts).pad(.15), {maxZoom:10}); }
+  if (fit && !F.state && !F.aircraft && !F.platform) map.setView([38.5, -96], 4);
+  const present = Object.entries(VCOL).filter(([v]) => A.some(a => vendorOf(a) === v));
+  $("#ckey").innerHTML = ON.color !== "type"
+    ? present.map(([v, c]) => `<li><span class="dot" style="background:${c}"></span>${v}</li>`).join("")
+      + `<li><span class="dot dash"></span>DFR, ${ON.color} not found</li><li><span class="dot dash" style="border-color:var(--ink-2)"></span>Unverified claim</li><li><span class="dot hollow" style="border-color:var(--ink-2)"></span>No DFR found or not researched</li>`
+      + `<li class="wide">Colored by DFR ${ON.color}. Researched so far: 42 states (shaded on the map).</li>`
+    : `<li><span class="dot law"></span>Law enforcement</li><li><span class="dot fire"></span>Fire and EMS</li><li><span class="dot other"></span>Federal and other</li>`
+      + `<li><span class="dot" style="width:16px;height:16px;background:var(--ink)"></span>400 ft waiver</li>`;
+  renderRows(shown);
+}
+
+// --- KPIs ----------------------------------------------------------------------
+// Headline numbers: DFR programs and their equipment first (researched states), then the national context.
+const researched = A.filter(a => a.osint && a.osint.dfr_status !== "not_researched");
+const verifiedDfr = researched.filter(a => isDfr(a.osint) && !a.osint.unverified);
+const topFam = layer => { const c = {}; for (const a of verifiedDfr) { const f = famOf(a.osint, layer); if (f && f !== "Combination" && f !== "Other") c[f] = (c[f] || 0) + 1; }
+  return Object.entries(c).sort((x, y) => y[1] - x[1])[0] || ["", 0]; };
+const [topA, topAn] = topFam("aircraft"), [topP, topPn] = topFam("platform");
+const rStates = [...new Set(researched.map(a => a.state))].sort().join(", ");
+const kpi = [
+  [verifiedDfr.length, `DFR programs found so far (${rStates || "none yet"})`],
+  [researched.length, "agencies researched agency by agency"],
+  // Until split records (aircraft and platform) are live, older records carry one combined vendor.
+  ...(researched.some(a => a.osint.version === 2) ? [
+    [topAn, topA ? `fly ${topA} aircraft, the most common maker` : "aircraft makers found"],
+    [topPn, topP ? `run on ${topP}'s DFR platform, the most common platform` : "DFR platforms found"]] : [
+    [topPn, topP ? `use ${topP}, the most common DFR vendor` : "DFR vendors found"],
+    [verifiedDfr.filter(a => a.osint.vendor).length, "DFR programs with a named vendor"]]),
+  [A.length, "agencies nationwide hold the FAA 91.113 waiver"],
+];
+$("#kgrid").innerHTML = kpi.map(([n, l]) => `<div><div class="x num">${fmt(n)}</div><p>${l}</p></div>`).join("");
+const byMonth = {};
+for (const a of A) for (const w of a.waivers) if (w.completed) { const m = w.completed.slice(0,7); byMonth[m] = (byMonth[m] || 0) + 1; }
+const months = Object.keys(byMonth).sort(), peak = Math.max(...Object.values(byMonth));
+$("#bars").innerHTML = months.map(m => `<div style="height:${byMonth[m] / peak * 100}%" title="${MON[+m.slice(5)-1]} ${m.slice(0,4)}: ${byMonth[m]} waivers"><span>${byMonth[m]}</span></div>`).join("");
+$("#bars").setAttribute("aria-label", "Waivers approved per month: " + months.map(m => `${MON[+m.slice(5)-1]} ${m.slice(0,4)} ${byMonth[m]}`).join(", "));
+$("#barlbl").innerHTML = months.map(m => `<span>${MON[+m.slice(5)-1]}${m.endsWith("-01") || m === months[0] ? " " + m.slice(2,4) : ""}</span>`).join("");
+
+// DFR aircraft and platforms among researched agencies. Each agency counts once per chart; agencies with
+// more than one maker or platform count under "Combination"; unverified claims are left out.
+(() => {
+  const res = A.filter(a => a.osint && a.osint.dfr_status !== "not_researched");
+  const dfr = res.filter(a => isDfr(a.osint));
+  const unver = dfr.filter(a => a.osint.unverified).length;
+  const st = [...new Set(res.map(a => a.state))].sort();
+  $("#vlbl").textContent = `Whose equipment DFR programs use · ${fmt(dfr.length - unver)} verified programs out of ${fmt(res.length)} agencies researched (${st.join(", ") || "none yet"})${unver ? ` · ${unver} unverified not counted` : ""}`;
+  const HEAD = {company: "Company behind the program", aircraft: "Aircraft maker", platform: "DFR platform (software and docks)"};
+  const chart = layer => {
+    const by = {}; let inferred = 0;
+    for (const a of dfr) { if (a.osint.unverified) continue; const f = famOf(a.osint, layer) || "Not found"; by[f] = (by[f] || 0) + 1;
+      if (layer === "aircraft" && a.osint.aircraft?.basis) inferred++; }
+    const rows = Object.entries(by).sort((x, y) => (x[0] === "Not found") - (y[0] === "Not found") || y[1] - x[1]);
+    const peakV = Math.max(...rows.map(r => r[1]), 1);
+    const note = layer === "company" ? "Each program counts once: the company behind its DFR platform, or the aircraft maker when no platform is named."
+      : layer === "aircraft" ? `Counts programs where a source names the aircraft${inferred ? `, plus ${inferred} inferred from the platform (Axon pairs with Skydio; Flock by start date), marked in each agency's details` : ""}.`
+      : "Counts only programs where a source names this part.";
+    return `<span class="vhead">${HEAD[layer]}</span><span class="vnote">${note}</span>` + rows.map(([v, n]) => `<span class="${v === "Not found" ? "dim2" : ""}">${esc(v === "Combination" ? "Combination (more than one)" : v)}</span><span class="bar" style="width:${n / peakV * 100}%;${v === "Not found" ? "opacity:.45" : ""}"></span><span class="n">${n}</span>`).join("");
+  };
+  $("#vbars").innerHTML = chart("company") + chart("aircraft") + chart("platform");
+})();
+
+// --- directory -------------------------------------------------------------------------
+// Default order puts verified DFR programs first, then the rest by state.
+const DFR_RANK = {operational:0, launched_pilot:1, approved_or_purchased:2, planned_or_considering:3, handheld_only:4, no_evidence:5, not_researched:6};
+for (const a of A) {
+  a.dfr_rank = a.osint ? (DFR_RANK[a.osint.dfr_status] ?? 7) + (a.osint.unverified ? .5 : 0) : 8;
+  const v2 = a.osint?.version === 2;
+  a.aircraft_sort = v2 ? a.osint.aircraft.value || "~" : (a.osint?.vendor || "~");
+  a.platform_sort = v2 ? a.osint.platform.value || "~" : (a.osint?.vendor || "~");
+}
+let sortKey = "dfr_rank", sortDir = 1, dirRows = [];
+document.querySelectorAll("th button[data-k]").forEach(b => b.onclick = () => {
+  sortDir = sortKey === b.dataset.k ? -sortDir : 1; sortKey = b.dataset.k; draw();
+});
+function renderRows(rows){
+  dirRows = [...rows].sort((a, b) => (a[sortKey] > b[sortKey] ? 1 : a[sortKey] < b[sortKey] ? -1 : 0) * sortDir || a.state.localeCompare(b.state) || a.name.localeCompare(b.name));
+  const nd = rows.filter(a => a.osint && isDfr(a.osint)).length;
+  $("#dirSub").textContent = `${fmt(nd)} DFR programs found among ${fmt(rows.length)} agencies that match the filters. Every agency here holds the FAA 91.113 waiver; DFR programs come first. Agencies in states not yet researched show a blank DFR column. Click a column to sort.`;
+  const STATUS_SHORT = {operational:"Operational", launched_pilot:"Pilot", approved_or_purchased:"Approved", planned_or_considering:"Planned", handheld_only:"Handheld only", no_evidence:"None found", not_researched:""};
+  const eq = (a, layer) => { const o = a.osint; if (!o) return "";
+    const v = o.version === 2 ? o[layer].value : o.vendor; const un = o.unverified ? ' <span class="dim">(unverified)</span>' : "";
+    return v ? esc(v) + un : isDfr(o) ? '<span class="dim">not found</span>' : ""; };
+  $("#rows").innerHTML = dirRows.map(a => `<tr data-i="${A.indexOf(a)}"${a === selected?.item ? ' style="outline:2px solid var(--sel);outline-offset:-2px"' : ""}>
+    <td>${esc(a.name)}</td><td>${esc(a.city)}</td><td>${a.state}</td>
+    <td>${a.osint ? (isDfr(a.osint) ? `<b>${STATUS_SHORT[a.osint.dfr_status]}</b>` : `<span class="dim">${STATUS_SHORT[a.osint.dfr_status] || ""}</span>`) : ""}</td>
+    <td>${eq(a, "aircraft")}</td><td>${a.osint?.version === 2 ? eq(a, "platform") : ""}</td>
+    <td class="n">${a.max_alt} ft</td><td class="n">${day(a.first)}</td></tr>`).join("");
+}
+$("#rows").onclick = e => { const tr = e.target.closest("tr[data-i]"); if (tr) { pick("agency", A[+tr.dataset.i], true); $("#mapsec").scrollIntoView({behavior:"smooth"}); } };
+
+// --- CSV export (what the filters show) ------------------------------------------------
+function csv(name, header, rows){
+  const q = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+  const cite = [[`Source: Basil Yap, DFR Adoption Map, https://basilbuildsai.github.io/dfr-program-map/ (data built ${D.built}). Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/): you must credit Basil Yap and DFR Adoption Map when you use or share this data.`],
+                ["© 2026 Basil Yap. Underlying FAA waiver records are U.S. government public data; the compilation, matching and vendor research are the licensed work."], []];
+  const blob = new Blob([[...cite, header, ...rows].map(r => r.map(q).join(",")).join("\n")], {type:"text/csv"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `${name}${F.state ? "_" + F.state : ""}_${D.built}.csv`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+$("#csvAgencies").onclick = () => csv("dfr_waiver_holders",
+  ["agency","city","state","type","ceiling_ft","effective","expires","detect_and_avoid","dfr_status","dfr_vendor","dfr_aircraft","dfr_aircraft_confidence","dfr_platform","dfr_platform_confidence","dfr_contract_holder","dfr_unverified","dfr_check_errors","dfr_system","dfr_docks","dfr_since","dfr_confidence","dfr_sources","vendor_atlas","atlas_summary","dr_flies_under","dr_program_since","dr_fleet","lat","lon"],
+  dirRows.map(a => [a.name, a.city, a.state, CAT_LABEL[catKey(a)], a.max_alt, a.first, a.expires, a.waivers.some(w => w.cmd_daa) ? "yes" : "",
+    a.osint ? STATUS[a.osint.dfr_status] : "", a.osint?.vendor, a.osint?.aircraft?.value, a.osint?.aircraft?.confidence, a.osint?.platform?.value,
+    a.osint?.platform?.confidence, a.osint?.contract_holder?.value, a.osint?.unverified ? "yes" : "", (a.osint?.check?.errors || []).join(" | "), a.osint?.system, a.osint?.docks ?? "", a.osint?.start_date, a.osint?.confidence,
+    (a.osint?.evidence || []).map(e => e.url).join(" "),
+    a.atlas?.vendor, a.atlas?.summary, a.dr?.auth.join("; "), a.dr?.started, a.dr?.fleet, a.lat, a.lon]));
+
+// --- sources -------------------------------------------------------------------------
+$("#sources").innerHTML = [
+  `<li><b>DFR programs and equipment.</b> Each agency is researched one by one from public sources, in this order: city council agendas, contracts and staff reports, the agency's own website and social accounts, vendor announcements, and local news. Research agents follow a written playbook and record three things separately, the aircraft maker, the DFR platform (the software and docks that dispatch and fly the drone) and who holds the contract, with a quoted source for each. Handheld drone programs don't count as DFR.</li>`,
+  `<li><b>Checks.</b> An automated check confirms that every link loads, every quote appears on its page, and every vendor claim describes drones rather than the vendor's other products, such as cameras or license plate readers. A second agent re-checks every confirmed claim and a random sample of the rest, and large states are spot-checked by hand. Anything that fails is labeled unverified and left out of the totals. Agency-by-agency research covers 42 states (shaded on the map) so far, and other states are next.</li>`,
+  `<li><b>Where the agency list comes from.</b> Every agency on the map holds the FAA's 14 CFR 91.113 public-safety Certificate of Waiver, approved between April 2025 and February 2026. The FAA released the list under the Freedom of Information Act and EFF published it (<a href="${D.waiver_source}">report</a>, <a href="${D.waiver_sheet}">spreadsheet</a>). The waiver allows flights within or beyond line of sight, at night and over people, so holding one doesn't by itself mean an agency runs DFR. "DFR is a concept, not a special set of flight regulations" (FAA FAQ, question 7). The list leaves out later approvals, older COAs that are still valid, Part 107 BVLOS waivers and most federal operators.</li>`,
+  `<li id="src-daa"><b>Ceilings and detect-and-avoid.</b> Most waivers allow 200 ft above ground, using buildings and trees as cover from crewed aircraft, and up to 400 ft within 100 ft of a structure in Class G airspace. Some allow 400 ft where the agency has an approved detect-and-avoid system, which senses crewed aircraft so the drone can stay clear of them. "Detect-and-avoid document provided to the FAA" means the FAA waiver list (<a href="${D.waiver_sheet}">spreadsheet</a>, column "CMD-DAA Document Provided") marks that waiver "Yes." The list doesn't name the system.</li>`,
+  `<li><b>Other drone programs.</b> <a href="https://atlasofsurveillance.org">Atlas of Surveillance</a> (EFF) and the <a href="https://droneresponders.maps.arcgis.com/apps/webappviewer/index.html?id=a84c95f4951345269f6fab330846d3de">DRONERESPONDERS survey map</a> list police and fire drone programs. They're used as leads, not evidence, because neither is DFR-specific and both can be years out of date.</li>`,
+  `<li><b>Locations and outlines.</b> City agencies use their city's or township's Census boundary and county agencies their county's (2024 cartographic boundary files). Statewide and federal agencies are shown at headquarters. Launch and dock locations are not shown.</li>`,
+  `<li><b>Why do this.</b> Public-safety drones fly over neighborhoods every day. Knowing which agencies run DFR, what they fly and where helps residents, officials and the industry understand how the technology is being adopted. Everything here comes from public records and shows its sources.</li>`,
+  `<li><b>License.</b> © 2026 Basil Yap. The compilation and research are licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: you may reuse and adapt them for any purpose if you credit <i>Basil Yap, DFR Adoption Map</i> and link here. FAA waiver records are U.S. government public data. <a href="LICENSE.txt">License terms</a>.</li>`,
+].join("");
+
+render();
+draw();
+
+// --- hero photo: slow drift and zoom while the header scrolls away ----------------
+(() => {
+  const ph = document.getElementById("heroPhoto"); if (!ph || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const hero = ph.closest(".hero"); let raf = 0;
+  const frame = () => { raf = 0; const p = Math.min(1, Math.max(0, window.scrollY / (hero.offsetHeight || 1)));
+    ph.style.transform = `translate3d(${(-p * 24).toFixed(1)}px, ${(p * 40).toFixed(1)}px, 0) scale(${(1 + p * .08).toFixed(3)})`; };
+  window.addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(frame); }, {passive:true});
+  frame();
+})();
+</script>
+
+</body>
+</html>

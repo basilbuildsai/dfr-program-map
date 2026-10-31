@@ -1,0 +1,16 @@
+DFR Adoption Map — https://basilbuildsai.github.io/dfr-program-map/
+Copyright (c) 2026 Basil Yap
+
+The DFR Adoption Map website content and data (the agency compilation, DFR program
+research, vendor findings, and CSV exports) are licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+Full license: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You may share and adapt this material for any purpose, provided you give appropriate credit,
+link to the license, and indicate if changes were made. Credit as:
+
+    Basil Yap, DFR Adoption Map, https://basilbuildsai.github.io/dfr-program-map/ (CC BY 4.0)
+
+Underlying source records (the FAA 14 CFR 91.113 waiver list and FAA NOTAMs) are U.S. government
+public data and are not covered by this license. Third-party sources cited in the research remain
+the property of their owners. The data is provided as is, without warranty of any kind.
